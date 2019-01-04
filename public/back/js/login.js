@@ -1,6 +1,4 @@
-import {
-    invalid
-} from "moment";
+
 
 $(function () {
 
@@ -90,7 +88,7 @@ $(function () {
 
                     return;
                 }
-                if (info.sussess) {
+                if (info.success) {
                     location.href = 'index.html';
                     return;
                 }
