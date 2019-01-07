@@ -63,6 +63,12 @@ $(function () {
 
         $('#dropdownText').text(txt);
 
+        var id = $(this).data('id');
+
+        $('[name="categoryId"]').val(id);
+
+        $('#form').data('bootstrapValidator').updateStatus('categoryId', 'VALID');
+
     })
 
     $('#fileupload').fileupload({
@@ -71,13 +77,106 @@ $(function () {
             var picUrl = data.result.picAddr;
 
             $('#imgBox img').attr('src', picUrl);
+
+
+        //    将地址赋值给隐藏域,专门用于提交
+            $('[name="brandLogo"]').val(picUrl);
+
+            $('#form').data('bootstrapValidator').updateStatus('brandLogo', 'VALID');
+
         }
     })
 
 
+    $('#form').bootstrapValidator({
+
+        excluded: [],
+
+        feedbackIcons: {
+            valid: 'glyphicon glyphicon-ok',
+            invalid: 'glyphicon glyphicon-remove',
+            validating: 'glyphicon glyphicon-refresh'
+        },
+
+        fields: {
+            categoryId: {
+                validators: {
+                    message: '请选择一级分类'
+                }
+            }
+        },
+        fields: {
+            brandName: {
+                validators: {
+                    message: '请选择二级分类名称'
+                }
+            }
+        },
+        fields: {
+            brandLogo: {
+                validators: {
+                    message: '请选择上传图片'
+                }
+            }
+        }
+    })
 
 
+    $('#form').on('success.form.bv', function (e) {
+        e.preventDefault();
+
+        $.ajax({
+            type: 'post',
+            url: '/category/addSecondCategory',
+            data: $('#form').serialize(),
+            dataType: 'json',
+            success: function (info) {
+
+                if( info.success) {
+
+                    $('#addModal').modal('hide');
+
+                    currentPage = 1;
+
+                    render();
+
+                    $('#form').data('bootstrapValidator').resetForm(true);
 
 
+                    $('#dropdownText').text('请选择一级分类');
+
+                    $('#imgBox img').attr('src','./images/none.png');
+                }
+
+
+            }
+        })
+    })
 
 })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
