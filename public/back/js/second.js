@@ -64,10 +64,12 @@ $(function () {
         $('#dropdownText').text(txt);
 
         var id = $(this).data('id');
+        // console.log(id);
 
         $('[name="categoryId"]').val(id);
+        console.log($('[name="categoryId"]'));
 
-        $('#form').data('bootstrapValidator').updateStatus('categoryId', 'VALID');
+        $('#form').data("bootstrapValidator").updateStatus("categoryId", "VALID")
 
     })
 
@@ -101,21 +103,24 @@ $(function () {
         fields: {
             categoryId: {
                 validators: {
-                    message: '请选择一级分类'
+                    notEmpty: {
+                        message: '请选择一级分类'
+                    }
+
                 }
-            }
-        },
-        fields: {
+            },
             brandName: {
                 validators: {
-                    message: '请选择二级分类名称'
+                    notEmpty: {
+                        message: '请输入二级分类名称'
+                    }
                 }
-            }
-        },
-        fields: {
+            },
             brandLogo: {
                 validators: {
-                    message: '请选择上传图片'
+                    notEmpty: {
+                        message: '请上传图片'
+                    }
                 }
             }
         }
