@@ -93,7 +93,7 @@ $(function() {
     dataType: "json",
     // done 文件成功上传完成的回调函数
     done: function( e, data ) {
-      console.log( data.result ); // 后台返回的结果对象
+      // console.log( data.result ); // 后台返回的结果对象
       var picObj = data.result; // 后台返回的图片对象
 
       // 往数组前面追加
