@@ -11,8 +11,6 @@ $(function () {
             validating: 'glyphicon glyphicon-refresh'
         },
 
-
-
         fields: {
             username: {
                 // 校验规则
@@ -110,5 +108,7 @@ $(function () {
         $('#form').data('bootstrapValidator').resetForm();
 
     })
+
+
 
 });
