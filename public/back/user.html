@@ -88,6 +88,28 @@
 
 </div>
 
+<!-- 启用禁用 -->
+<div class="modal fade" id="userModal" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <!-- 头部 -->
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal"><span>&times;</span></button>
+                <h4 class="modal-title">温馨提示</h4>
+            </div>
+            <!-- 中间 -->
+            <div class="modal-body">
+                <p class="red"><i class="glyphicon glyphicon-info-sign"></i>你确定要执行此操作吗？</p>
+            </div>
+            <!-- 底部 -->
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">取消</button>
+                <button type="button" class="btn btn-primary" id="submitBtn">确认</button>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 <!-- 退出模态框 -->
 <!-- 外层是蒙层, 内层才是模态框主体 -->
@@ -145,7 +167,7 @@
 <script src="./lib/bootstrap-paginator/bootstrap-paginator.min.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/isLogin.js"></script>
-<sctipt src="./js/user.js"></sctipt>
+<script src="./js/user.js"></script>
 
 </body>
 </html>
