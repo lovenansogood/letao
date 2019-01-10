@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html lang="zh-CN">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>乐淘电商移动端</title>
-  <!-- 设置视口 -->
+  <title>Title</title>
   <meta name="viewport"
         content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
   <link rel="stylesheet" href="./lib/mui/css/mui.css">
@@ -21,23 +20,22 @@
     <a href="search.html" class="icon_right"><i class="fa fa-search"></i></a>
   </div>
 
-  <div class="lt_main">
-    <div class="lt_category_left">
-      <div class="mui-scroll-wrapper">
-        <div class="mui-scroll">
-          <ul>
-            <!-- 挖个坑 -->
-          </ul>
-        </div>
+  <div class="lt_category_left">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <ul>
+          <!--挖个坑-->
+        </ul>
       </div>
     </div>
-    <div class="lt_category_right">
-      <div class="mui-scroll-wrapper">
-        <div class="mui-scroll">
-          <ul>
-            <!-- 挖个坑 -->
-          </ul>
-        </div>
+  </div>
+
+  <div class="lt_category_right">
+    <div class="mui-scroll-wrapper">
+      <div class="mui-scroll">
+        <ul>
+          <!--挖个坑-->
+        </ul>
       </div>
     </div>
   </div>
@@ -73,7 +71,7 @@
 </div>
 
 <script type="text/html" id="leftTpl">
-  {{ each rows v i }}
+  {{each rows v i}}
   <li><a data-id="{{ v.id }}" class="{{ i === 0 ? 'current' : '' }}" href="#">{{ v.categoryName }}</a></li>
   {{ /each }}
 </script>
@@ -96,12 +94,11 @@
 
 </script>
 
+
 <script src="./lib/mui/js/mui.js"></script>
 <script src="./lib/zepto/zepto.min.js"></script>
 <script src="./lib/artTemplate/template-web.js"></script>
 <script src="./js/common.js"></script>
 <script src="./js/category.js"></script>
-
-
 </body>
 </html>
